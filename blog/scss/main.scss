@@ -1,11 +1,117 @@
-@import "lib";
+$text-color: black;
+$article-font: Verdana;
 
-@mixin rounded ($border-color: black,$shadow-color:black,$border-width:1px) {
-    border-radius: 50%;
-    border: $border-width $border-color solid;
-    box-shadow: 0 0 1em $shadow-color;
+$back: repeating-linear-gradient(90deg, 
+            transparent, 
+            transparent 50px, 
+            rgba(255, 127, 0, 0.25) 50px, 
+            rgba(255, 127, 0, 0.25) 56px, 
+            transparent 56px, 
+            transparent 63px, 
+            rgba(255, 127, 0, 0.25) 63px, 
+            rgba(255, 127, 0, 0.25) 69px, 
+            transparent 69px, 
+            transparent 116px, 
+            rgba(255, 206, 0, 0.25) 116px, 
+            rgba(255, 206, 0, 0.25) 166px
+        ), 
+        repeating-linear-gradient(
+            0deg, transparent, transparent 50px, 
+            rgba(255, 127, 0, 0.25) 50px, 
+            rgba(255, 127, 0, 0.25) 56px, 
+            transparent 56px, 
+            transparent 63px, 
+            rgba(255, 127, 0, 0.25) 63px, 
+            rgba(255, 127, 0, 0.25) 69px, 
+            transparent 69px, 
+            transparent 116px, 
+            rgba(255, 206, 0, 0.25) 116px, 
+            rgba(255, 206, 0, 0.25) 166px
+        ), 
+        repeating-linear-gradient(-45deg, 
+            transparent, 
+            transparent 5px, 
+            rgba(143, 77, 63, 0.25) 5px, 
+            rgba(143, 77, 63, 0.25) 10px
+        ), 
+        repeating-linear-gradient(45deg, 
+            transparent, 
+            transparent 5px, 
+            rgba(143, 77, 63, 0.25) 5px, 
+            rgba(143, 77, 63, 0.25) 10px
+        );
+        
+        
+
+body {
+    font-family: sans-serif;
+    margin:0;
+    background-color: #1D1F21;
+    background-image: $back;
 }
 
-$mixin rounded-corner-box () {
+.main-header {
+    font-size: 1.4em;
+    overflow:hidden;
+    color: white;
+    text-align: center;
+    background-color: black;
+        
+}
+
+.article {
+    overflow: hidden;
+    position: relative;
+    
+    &__featured-image {
+        display: none;
+    }
+    
+    &__title {
+        background-image: url(https://placekitten.com/g/601/400);
+        background-size: cover;
+        background-position: center;
+        color: white;
+        text-shadow: 1px 1px 1px black;
+        text-align: center;
+        padding: 150px 0;
+        margin:0;
+    }
+    
+    &__paragraph {
+        background-color: rgba(255,255,255,0.9);
+        max-width: 600px;
+        margin: auto;
+        padding: 20px;
+
+        &::first-letter {
+            font-size: 2em;
+            color:white;
+            text-shadow: 0 0 0.3em black;
+        }
+        
+    }
     
 }
+
+
+.author-info {
+    margin: auto;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    
+    &__image {
+        border-radius: 50%;
+    }
+    
+    &__text{
+        color:white;
+        padding: 50px;
+    }
+    
+    &__link{
+        color:white;
+    }
+}
+
