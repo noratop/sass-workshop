@@ -1,11 +1,11 @@
-@import "lib";
-
 @mixin rounded ($border-color: black,$shadow-color:black,$border-width:1px) {
     border-radius: 50%;
     border: $border-width $border-color solid;
     box-shadow: 0 0 1em $shadow-color;
 }
 
-$mixin rounded-corner-box () {
-    
+@mixin rounded-corner-box ($radius, $border-color, $border-width, $back-color) {
+    border-radius: $radius;
+    border: $border-width $border-color solid;
+    background-color: $back-color;
 }
