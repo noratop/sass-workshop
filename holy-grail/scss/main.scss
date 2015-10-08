@@ -1,1 +1,25 @@
-// write your code here 
+.HolyGrail-body {
+    display: flex;
+    flex-flow: row wrap;
+    
+    & > * {
+        flex: 1 100%;
+    }
+    
+}
+
+@media only screen and (min-width: 40.063em) {
+    .u-textCenter {
+        flex: 1 auto;
+    } 
+}
+
+@media only screen and (min-width: 64.063em) {
+    .HolyGrail-content {
+        flex: 2 0px;
+    }
+    
+    .HolyGrail-nav {
+        order: -1;
+    }
+}
